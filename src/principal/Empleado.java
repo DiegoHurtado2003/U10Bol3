@@ -1,11 +1,12 @@
 package principal;
 
 public abstract class Empleado {
-    public int telefono, salario, antiguedad;
+    public int telefono, antiguedad;
+    public double salario;
     public String nombre, apellidos, dni, direccion;
 
     //Constructor
-    public Empleado(int telefono, int salario,
+    public Empleado(int telefono, double salario,
                     int antiguedad, String nombre,
                     String apellidos, String dni,
                     String direccion) {
@@ -18,10 +19,38 @@ public abstract class Empleado {
         this.direccion = direccion;
     }
 
-    //Métodos
-    public void cambioSupervisor(){}
+    //Métodos abstractos
+    public void cambioSupervisor(JefeProyecto supervisor){}
 
     public void incrementarSalario(){}
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public int getAntiguedad() {
+        return antiguedad;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
 
     @Override
     public String toString() {

@@ -5,38 +5,62 @@ private Portatil portatil;
 private int TelefonoMovil;
 private Proyecto proyecto;
 private Tecnologia tecnologia;
-    public Programador(int telefono, int salario, int antiguedad, String nombre,
-                       String apellidos, String dni, String direccion, Portatil portatil, int telefonoMovil, Proyecto proyecto, Tecnologia tecnologia) {
+private JefeProyecto supervisor;
+
+    public Programador(int telefono, double salario, int antiguedad,
+                       String nombre, String apellidos, String dni,
+                       String direccion, Portatil portatil,
+                       int telefonoMovil, Proyecto proyecto,
+                       Tecnologia tecnologia,
+                       JefeProyecto supervisor) {
         super(telefono, salario, antiguedad, nombre, apellidos, dni, direccion);
         this.portatil = portatil;
         TelefonoMovil = telefonoMovil;
         this.proyecto = proyecto;
         this.tecnologia = tecnologia;
+        this.supervisor = supervisor;
+    }
+
+
+    public Portatil getPortatil() {
+        return portatil;
+    }
+
+    public int getTelefonoMovil() {
+        return TelefonoMovil;
+    }
+
+    public Proyecto getProyecto() {
+        return proyecto;
+    }
+
+    public Tecnologia getTecnologia() {
+        return tecnologia;
+    }
+
+    public JefeProyecto getSupervisor() {
+        return supervisor;
     }
 
     @Override
-    public void cambioSupervisor() {
-        super.cambioSupervisor();
+    public void cambioSupervisor(JefeProyecto supervisor) {
+        this.supervisor=supervisor;
     }
-    //completar
+
     @Override
     public void incrementarSalario() {
-        super.incrementarSalario();
+        this.salario= this.salario*1.10;
     }
-//completar
-
 
     @Override
-    public void cambiarPortatil() {
-        CambiarPortatilTecnologia.super.cambiarPortatil();
+    public void cambiarPortatil(Portatil portatil) {
+        this.portatil=portatil;
     }
-//completar
 
     @Override
-    public void cambiarTecnologia() {
-        CambiarPortatilTecnologia.super.cambiarTecnologia();
+    public void cambiarTecnologia(Tecnologia tecnologia) {
+        this.tecnologia=tecnologia;
     }
-    //completar
 
     @Override
     public String toString() {

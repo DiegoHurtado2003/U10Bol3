@@ -23,14 +23,38 @@ public class JefeProyecto extends Empleado implements CambiarPortatilTecnologia{
         this.despacho = despacho;
     }
 
-    @Override
-    public void cambiarPortatil() {
-        CambiarPortatilTecnologia.super.cambiarPortatil();
+    public Administrativo getSecretario() {
+        return secretario;
+    }
+
+    public ArrayList<Programador> getProgramadoresSubordinados() {
+        return programadoresSubordinados;
+    }
+
+    public Coche getCoche() {
+        return coche;
+    }
+
+    public Portatil getPortatil() {
+        return portatil;
+    }
+
+    public Tecnologia getTecnologia() {
+        return tecnologia;
+    }
+
+    public Despacho getDespacho() {
+        return despacho;
     }
 
     @Override
-    public void cambiarTecnologia() {
-        CambiarPortatilTecnologia.super.cambiarTecnologia();
+    public void cambiarPortatil(Portatil portatil) {
+        this.portatil=portatil;
+    }
+
+    @Override
+    public void cambiarTecnologia(Tecnologia tecnologia) {
+        this.tecnologia=tecnologia;
     }
 
     public JefeProyecto(int telefono, int salario, int antiguedad, String nombre, String apellidos, String dni, String direccion) {
@@ -38,20 +62,23 @@ public class JefeProyecto extends Empleado implements CambiarPortatilTecnologia{
     }
 
     @Override
-    public void cambioSupervisor() {
-        super.cambioSupervisor();
-    }
-
-    @Override
     public void incrementarSalario() {
-        super.incrementarSalario();
+
+        this.salario= this.salario*1.20;
     }
 
-    public void cambiarCoche(){}
+    public void cambiarCoche(Coche coche){
+        this.coche=coche;
+    }
 
-    public void cambiarAdministrativo(){}
+    public void cambiarAdministrativo(Administrativo secretario){
+        this.secretario=secretario;
+    }
 
-    public void altaBajaProgramadores(){}
+    public void altaBajaProgramadores(boolean altaBaja, Programador programador){
+        if (altaBaja){programadoresSubordinados.add(programador);}
+        else{programadoresSubordinados.remove(programador);}
+    }
 
     @Override
     public String toString() {

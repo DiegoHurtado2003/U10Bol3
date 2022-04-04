@@ -1,8 +1,8 @@
 package principal;
 
 public class Administrativo extends Empleado{
-    private Despacho despacho;
-    private int numFax;
+    private final Despacho despacho;
+    private final int numFax;
 
     public Administrativo(int telefono, int salario, int antiguedad,
                           String nombre, String apellidos, String dni,
@@ -12,9 +12,17 @@ public class Administrativo extends Empleado{
         this.numFax = numFax;
     }
 
+    public Despacho getDespacho() {
+        return despacho;
+    }
+
+    public int getNumFax() {
+        return numFax;
+    }
+
     @Override
     public void incrementarSalario() {
-        super.incrementarSalario();
+        this.salario= this.salario*1.05;
     }
 
     @Override
