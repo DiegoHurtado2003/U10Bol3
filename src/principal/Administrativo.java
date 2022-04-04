@@ -1,12 +1,12 @@
 package principal;
 
 public class Administrativo extends Empleado{
-    private String despacho;//Hacer enum
+    private Despacho despacho;
     private int numFax;
 
     public Administrativo(int telefono, int salario, int antiguedad,
                           String nombre, String apellidos, String dni,
-                          String direccion, String despacho, int numFax) {
+                          String direccion, Despacho despacho, int numFax) {
         super(telefono, salario, antiguedad, nombre, apellidos, dni, direccion);
         this.despacho = despacho;
         this.numFax = numFax;

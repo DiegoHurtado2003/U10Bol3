@@ -7,10 +7,13 @@ public class JefeProyecto extends Empleado implements CambiarPortatilTecnologia{
   private ArrayList <Programador> programadoresSubordinados;
    private Coche coche;
    private Portatil portatil;
-    private String tecnologia;//Hacer enum
-    private String despacho;//Hacer enum
+    private Tecnologia tecnologia;
+    private Despacho despacho;
 
-    public JefeProyecto(int telefono, int salario, int antiguedad, String nombre, String apellidos, String dni, String direccion, Administrativo secretario, ArrayList<Programador> programadoresSubordinados, Coche coche, Portatil portatil, String tecnologia, String despacho) {
+    public JefeProyecto(int telefono, int salario, int antiguedad, String nombre, String apellidos,
+                        String dni, String direccion, Administrativo secretario,
+                        ArrayList<Programador> programadoresSubordinados, Coche coche,
+                        Portatil portatil, Tecnologia tecnologia, Despacho despacho) {
         super(telefono, salario, antiguedad, nombre, apellidos, dni, direccion);
         this.secretario = secretario;
         this.programadoresSubordinados = programadoresSubordinados;
