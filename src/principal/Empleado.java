@@ -20,9 +20,20 @@ public abstract class Empleado {
     }
 
     //Métodos abstractos
-    public void cambioSupervisor(JefeProyecto supervisor){}
 
-    public void incrementarSalario(){}
+    /**
+     * Método que cambia de supervisor pasandole por parámetro un objeto JefeProyecto
+     * @param supervisor
+     * precondición: El objeto tiene que ser creado previamente
+     */
+    public void cambioSupervisor(JefeProyecto supervisor) {
+    }
+
+    /*
+     * Método que incrementa el salario
+     */
+    public void incrementarSalario() {
+    }
 
     public int getTelefono() {
         return telefono;

@@ -1,6 +1,6 @@
 package principal;
 
-public class Administrativo extends Empleado{
+public class Administrativo extends Empleado {
     private final Despacho despacho;
     private final int numFax;
 
@@ -21,8 +21,11 @@ public class Administrativo extends Empleado{
     }
 
     @Override
+    /*
+     * Método que incrementa un 5% el salario
+     */
     public void incrementarSalario() {
-        this.salario= this.salario*1.05;
+        this.salario = this.salario * 1.05;
     }
 
     @Override

@@ -9,4 +9,13 @@ public class Portatil {
         this.numSerie = numSerie;
         this.modelo = modelo;
     }
+
+    @Override
+    public String toString() {
+        return "Portatil{" +
+                "marca='" + marca + '\'' +
+                ", numSerie=" + numSerie +
+                ", modelo='" + modelo + '\'' +
+                '}';
+    }
 }

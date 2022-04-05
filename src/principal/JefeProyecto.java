@@ -2,11 +2,11 @@ package principal;
 
 import java.util.ArrayList;
 
-public class JefeProyecto extends Empleado implements CambiarPortatilTecnologia{
-  private Administrativo secretario;
-  private ArrayList <Programador> programadoresSubordinados;
-   private Coche coche;
-   private Portatil portatil;
+public class JefeProyecto extends Empleado implements CambiarPortatilTecnologia {
+    private Administrativo secretario;
+    private ArrayList<Programador> programadoresSubordinados;
+    private Coche coche;
+    private Portatil portatil;
     private Tecnologia tecnologia;
     private Despacho despacho;
 
@@ -48,13 +48,23 @@ public class JefeProyecto extends Empleado implements CambiarPortatilTecnologia{
     }
 
     @Override
+    /**
+     * Método que cambia el atributo portatil del objeto por otro distinto que se pasa por parámetro.
+     * @param portatil Es un objeto de la clase Portatil
+     * Precondición: El objeto portátil deberá ser creado previamente
+     */
+
     public void cambiarPortatil(Portatil portatil) {
-        this.portatil=portatil;
+        this.portatil = portatil;
     }
 
     @Override
+    /**
+     * Método que cambia el atributo tecnología del objeto por otro distinto.
+     * @param tecnologia Es un parámetro que cogeremos del enum Tecnologia
+     */
     public void cambiarTecnologia(Tecnologia tecnologia) {
-        this.tecnologia=tecnologia;
+        this.tecnologia = tecnologia;
     }
 
     public JefeProyecto(int telefono, int salario, int antiguedad, String nombre, String apellidos, String dni, String direccion) {
@@ -62,22 +72,46 @@ public class JefeProyecto extends Empleado implements CambiarPortatilTecnologia{
     }
 
     @Override
+    /*
+     * Método que incrementa un 20% el salario
+     */
     public void incrementarSalario() {
 
-        this.salario= this.salario*1.20;
+        this.salario = this.salario * 1.20;
     }
 
-    public void cambiarCoche(Coche coche){
-        this.coche=coche;
+    /**
+     * Método que cambia de cohe pasandole por parametro un objeto Coche
+     * @param coche
+     * Precondición: El objeto coche debe estar previamente creado
+     */
+    public void cambiarCoche(Coche coche) {
+        this.coche = coche;
     }
 
-    public void cambiarAdministrativo(Administrativo secretario){
-        this.secretario=secretario;
+    /**
+     * Método que cambia de secretario pasandole por parametro un objeto Administrativo
+     * @param secretario
+     * Precondición: El objeto coche debe estar previamente creado
+     */
+    public void cambiarAdministrativo(Administrativo secretario) {
+        this.secretario = secretario;
     }
 
-    public void altaBajaProgramadores(boolean altaBaja, Programador programador){
-        if (altaBaja){programadoresSubordinados.add(programador);}
-        else{programadoresSubordinados.remove(programador);}
+    /**
+     * Método para meter o sacar un programador de la lista
+     * de programadores subordinados el jefe de proyectos
+     * @param altaBaja es un parámetro que cuando es true añade un programador y cuando es false lo elimina
+     * @param programador Es un objeto programador que será eliminado o añadido a la lista
+     * Precondición: El objeto programador debe estar previamente creado para añadirlo, o
+     *               estar previamente en la lista para eliminarlo
+     */
+    public void altaBajaProgramadores(boolean altaBaja, Programador programador) {
+        if (altaBaja) {
+            programadoresSubordinados.add(programador);
+        } else {
+            programadoresSubordinados.remove(programador);
+        }
     }
 
     @Override
